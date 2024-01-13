@@ -1,4 +1,4 @@
-# Alpha Countdown React Component
+# Alpha Countdown
 
 A customizable React component for displaying countdowns with various options and styling with types.
 
