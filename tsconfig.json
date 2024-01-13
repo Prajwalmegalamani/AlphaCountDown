@@ -1,0 +1,11 @@
+{
+    "extends": "@tsconfig/recommended/tsconfig.json",
+    "compilerOptions": {
+        "jsx": "preserve"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+}

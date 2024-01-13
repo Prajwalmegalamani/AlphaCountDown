@@ -1,0 +1,60 @@
+{
+  "name": "alpha-countdown",
+  "version": "1.0.0",
+  "description": "A customizable React component for displaying countdowns with various options and styling with types.",
+  "main": "src/index.js",
+  "files": [
+    "src/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Prajwalmegalamani/AlphaCountDown"
+  },
+  "module": "src/index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "npm",
+    "countdown",
+    "progress",
+    "progressbar",
+    "timer",
+    "front-end",
+    "react",
+    "component",
+    "Timer",
+    "ui",
+    "frontend",
+    "time",
+    "countdown-timer",
+    "react-timer",
+    "progress-bar",
+    "react-progress",
+    "ui-component"
+  ],
+  "author": "Prajwal Megalamani",
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "dependencies": {
+    "react": "^18.2.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.3",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.47"
+  },
+  "engines": {
+    "npm": ">=10.3.0,"
+  },
+  "homepage": "https://github.com/Prajwalmegalamani/AlphaCountDown",
+  "browserslist": [
+    "> 0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
