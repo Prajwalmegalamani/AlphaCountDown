@@ -1,2 +1,1 @@
-console.log("here");
-export * from './AlphaCountDown';
+export { default as AlphaCountDown   } from './AlphaCountDown';

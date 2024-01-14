@@ -1,7 +1,12 @@
 {
     "extends": "@tsconfig/recommended/tsconfig.json",
     "compilerOptions": {
-        "jsx": "preserve"
+        "jsx": "preserve",
+        "declaration": true,
+        "baseUrl": "./src",
+        "paths": {
+          "alpha-countdown": [".src/index"]
+        }
     },
     "exclude": [
         "node_modules"

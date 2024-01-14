@@ -1,8 +1,9 @@
 {
   "name": "alpha-countdown",
   "version": "1.0.0",
+  "types": "dist/index.d.ts",
   "description": "A customizable React component for displaying countdowns with various options and styling with types.",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "files": [
     "src/**/*"
   ],

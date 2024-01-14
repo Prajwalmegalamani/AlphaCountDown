@@ -100,6 +100,7 @@ export default function AlphaCountDown({
   customTextBeforePercantage,
   customTextBeforeTime,
 }: IAlphaCountDown) {
+  const [hydrated, setHydrated] = React.useState(false);
   const [inputTime, setInputTime] = useState(endTime);
   const [completed, setCompleted] = useState<boolean>(false);
   const [startTime, setStartTime] = useState<Date>(new Date());
@@ -114,11 +115,14 @@ export default function AlphaCountDown({
     const difference = inputTime.getTime() - now.getTime();
     return Math.max(0, difference); // Ensure time remaining is non-negative
   }
-
   useEffect(() => {
     getRemainingDuration && getRemainingDuration(timeRemaining);
     getProgress && getProgress(percentageRemaining);
   }, [timeRemaining, percentageRemaining]);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   function calculatePercentageRemaining(reverse: boolean): number {
     const now = new Date();
@@ -275,11 +279,16 @@ export default function AlphaCountDown({
     return parts.join(separator);
   };
 
+  if (!hydrated) {
+    return null;
+  }
+
   return (
     <div
       style={{
         width: "100%",
         height: "45px",
+        minWidth: "0px",
         // height: "100%",
         position: "absolute",
         borderRadius: "8px",
@@ -295,11 +304,13 @@ export default function AlphaCountDown({
           width: `${percentageRemaining.toFixed(2)}%`,
           display: "flex",
           height: "100%",
-          transition: "width 0.5s steps",
-          ...progressBarStyles,
+          position: "static",
+          transition: "width 0.5s linear",
+          minWidth: "0px",
           zIndex: 5,
-          borderRadius: 5,
+          borderRadius: "8px 0px 0px 8px",
           backgroundColor: "#EB6A6E",
+          ...progressBarStyles,
         }}
         className={progressBarClassNames}
       >
@@ -309,6 +320,7 @@ export default function AlphaCountDown({
             height: "100%",
             position: "absolute",
             borderRadius: "8px",
+            minWidth: "0px",
             display: "flex",
             ...overlayStyles,
             color: "white",
@@ -334,9 +346,9 @@ export default function AlphaCountDown({
                   textAlign: "center",
                   justifyContent: "center",
                   alignItems: "center",
-                  ...onCompleteStyles,
                   color: "yellow",
                   background: "brown",
+                  ...onCompleteStyles,
                 }}
                 className={onCompleteClassNames}
               >
@@ -350,9 +362,10 @@ export default function AlphaCountDown({
                 display: "flex",
                 textAlign: "center",
                 justifyContent: showLive ? "space-between" : "end",
-                margin: "0 10px",
+                margin: "0",
                 alignItems: "center",
                 ...inProgressStyles,
+                borderRadius: "8px",
               }}
               className={inProgressClassNames}
             >
