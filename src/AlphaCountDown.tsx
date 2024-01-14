@@ -7,18 +7,8 @@ import React, {
   ComponentProps,
 } from "react";
 
-export interface Duration {
-  years: number;
-  months: number;
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-  milliseconds: number;
-}
-
 //Input Props
-export interface IAlphaCountDown {
+interface IAlphaCountDown {
   //data outputs
   getRemainingDuration?: (remainingDuration: number) => void;
   getProgress?: (remainingDuration: number) => void;
