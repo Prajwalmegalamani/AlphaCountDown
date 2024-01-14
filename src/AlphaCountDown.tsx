@@ -353,6 +353,7 @@ export default function AlphaCountDown({
                 textAlign: "center",
                 justifyContent: showLive ? "space-between" : "end",
                 margin: "0",
+                padding: "0 5px",
                 alignItems: "center",
                 ...inProgressStyles,
                 borderRadius: "8px",
