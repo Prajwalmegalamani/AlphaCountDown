@@ -1,10 +1,8 @@
 {
   "name": "alpha-countdown",
   "version": "1.0.0",
-  "types": "dist/index.d.ts",
   "description": "A customizable React component for displaying countdowns with various options and styling with types.",
-  "main": "src/index.ts",
-  "typings": "./src/index.d.ts",
+  "main": "./src/index.ts",
   "files": [
     "src/**/*"
   ],
@@ -12,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/Prajwalmegalamani/AlphaCountDown"
   },
-  "module": "src/index.js",
+  "module": "./src/index.ts",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
   },

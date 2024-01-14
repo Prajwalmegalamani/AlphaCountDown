@@ -1,1 +1,1 @@
-export { default as AlphaCountDown   } from './AlphaCountDown';
+export { default as AlphaCountDown } from './AlphaCountDown';

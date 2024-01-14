@@ -3,7 +3,7 @@ import { CSSProperties } from "react";
 import { ReactNode } from "react";
 
 //Input Props
-export default interface IAlphaCountDown {
+ interface IAlphaCountDown {
     //data outputs
     getRemainingDuration?: (remainingDuration: number) => void;
     getProgress?: (remainingDuration: number) => void;
