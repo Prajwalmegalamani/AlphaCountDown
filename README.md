@@ -8,6 +8,8 @@ A customizable React component for displaying countdowns with various options an
 npm install alpha-countdown
 ```
 
+## [Demo](https://demo-alpha-count-down.vercel.app/)
+
 ## Usage
 
 ```bash
@@ -48,45 +50,7 @@ export default function Home() {
       getProgress={getProgress}
       reverse={true}
       showLive={true}
-      // Default smooth Progress true
       smoothProgress={true}
-      percantageDecimals={0}
-      // Default show Seconds true
-      showCountDown={true}
-      // Default show Percentage true
-      showPercentage={true}
-      // Default show Milliseconds false
-      showMilliseconds={false}
-      // Show only remaining time false
-      showOnlyRemainingTime={false}
-      // Toggle to show years when showOnlyRemainingTime is false
-      showYears={true}
-      // Toggle to show months when showOnlyRemainingTime is false
-      showMonths={true}
-      // Toggle to show days when showOnlyRemainingTime is false
-      showDays={true}
-      // Only text for now
-      onComplete="Hello, Time Up bro"
-      timeFormat="short"
-      dateSeparator="space"
-      endTime={new Date(new Date().setSeconds(new Date().getSeconds() + 10))}
-      containerStyles={{}}
-      progressBarStyles={{}}
-      overlayStyles={{}}
-      inProgressStyles={{
-        color: "green",
-        // background: "black",
-      }}
-      onCompleteStyles={{}}
-      containerClassNames="!h-[800px]"
-      progressBarClassNames="!bg-pink-200"
-      overlayClassNames="!text-green-300"
-      onCompleteClassNames="!text-red-100 !bg-blue-900 font-bold rounded-md"
-      inProgressClassNames="text-red"
-      customOverlayForCompleted={<>Check</>}
-      customOverlayForInProgress={<div className="text-red">hello</div>}
-      customTextBeforePercentage={<>Remaining Percentage </>}
-      customTextBeforeTime={<>Remaining Time</>}
     />
   );
 }
@@ -94,6 +58,7 @@ export default function Home() {
 ```
 
 ## Props
+
 ### Required Props
 
 ### `endTime`
@@ -101,8 +66,8 @@ export default function Home() {
 - **Type**: Date
 - **Description**: The end time for the countdown.
 
-
 ### Optional Props
+
 ### `getTotalDuration`
 
 - **Type**: Function
@@ -213,7 +178,7 @@ export default function Home() {
 
 - **Type**: String
 - **Description**: Custom CSS class names for different components.
-- 
+-
 
 Feel free to experiment with these styling options to achieve the desired look and feel for your countdown component. If you encounter any issues or have suggestions for improvements, please open an issue on [GitHub](https://github.com/Prajwalmegalamani/AlphaCountDown).
 

@@ -1,12 +1,12 @@
 {
   "name": "alpha-countdown",
-  "version": "1.0.35",
+  "version": "1.1.0",
   "description": "A customizable React component for displaying countdowns with various options and styling with types.",
   "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
+	"module": "dist/esm/index.js",
+	"files": [
+		"dist"
+	],
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
@@ -15,11 +15,31 @@
   "scripts": {
     "rollup-build-lib": "rollup -c"
   },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
+  "author": "Prajwal Megalamani",
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.2",
+		"@babel/preset-react": "^7.22.15",
+		"@babel/preset-typescript": "^7.23.2",
+		"@rollup/plugin-commonjs": "^25.0.7",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-terser": "^0.4.4",
+		"@rollup/plugin-typescript": "^11.1.5",
+		"@types/react": "^18.2.33",
+		"postcss": "^8.4.31",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"rollup": "^4.1.5",
+		"rollup-plugin-dts": "^6.1.0",
+		"rollup-plugin-peer-deps-external": "^2.2.4",
+		"rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.6.2",
+		"typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
   },
   "keywords": [
     "react",
@@ -41,24 +61,6 @@
     "progress-bar",
     "react-progress",
     "ui-component"
-  ],
-  "author": "Prajwal Megalamani",
-  "license": "MIT",
-  "licenseFilename": "LICENSE",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.6",
-    "@types/react": "^18.2.48",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rollup": "^4.9.5",
-    "rollup-plugin-dts": "^6.1.0",
-    "tslib": "^2.6.2",
-    "typescript": "^5.3.3"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+  ]
 }
+
