@@ -1,18 +1,25 @@
 {
   "name": "alpha-countdown",
-  "version": "1.0.0",
+  "version": "1.0.35",
   "description": "A customizable React component for displaying countdowns with various options and styling with types.",
-  "main": "./src/index.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "files": [
-    "src/**/*"
+    "dist"
   ],
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/Prajwalmegalamani/AlphaCountDown"
   },
-  "module": "./src/index.ts",
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+    "rollup-build-lib": "rollup -c"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
   "keywords": [
     "react",
@@ -38,23 +45,20 @@
   "author": "Prajwal Megalamani",
   "license": "MIT",
   "licenseFilename": "LICENSE",
-  "dependencies": {
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.2.48",
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.9.5",
+    "rollup-plugin-dts": "^6.1.0",
+    "tslib": "^2.6.2",
     "typescript": "^5.3.3"
   },
-  "devDependencies": {
-    "@tsconfig/recommended": "^1.0.3",
-    "@types/node": "^20.11.0",
-    "@types/react": "^18.2.47"
-  },
-  "engines": {
-    "npm": ">=10.3.0,"
-  },
-  "homepage": "https://github.com/Prajwalmegalamani/AlphaCountDown",
-  "browserslist": [
-    "> 0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }

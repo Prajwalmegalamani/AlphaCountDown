@@ -1,14 +1,7 @@
-"use client";
-import React, {
-  useState,
-  useEffect,
-  CSSProperties,
-  ReactNode,
-  ComponentProps,
-} from "react";
+import * as React from "react";
 
 //Input Props
-interface IAlphaCountDown {
+export interface IAlphaCountDown {
   //data outputs
   getRemainingDuration?: (remainingDuration: number) => void;
   getProgress?: (remainingDuration: number) => void;
@@ -31,23 +24,23 @@ interface IAlphaCountDown {
   percantageDecimals?: number;
   timeFormat?: "short" | "long" | false;
   //html Inputs
-  customTextBeforePercantage?: ReactNode;
-  customTextBeforeTime?: ReactNode;
-  customOverlayForCompleted?: ReactNode;
-  customOverlayForInProgress?: ReactNode;
+  customTextBeforePercantage?: React.ReactNode;
+  customTextBeforeTime?: React.ReactNode;
+  customOverlayForCompleted?: React.ReactNode;
+  customOverlayForInProgress?: React.ReactNode;
   //css styles Inputs
   dateSeperator?: "-" | ":" | "space" | string;
-  containerStyles?: CSSProperties;
-  progressBarStyles?: CSSProperties;
-  overlayStyles?: CSSProperties;
-  onCompleteStyles?: CSSProperties;
-  inProgressStyles?: CSSProperties;
+  containerStyles?: React.CSSProperties;
+  progressBarStyles?: React.CSSProperties;
+  overlayStyles?: React.CSSProperties;
+  onCompleteStyles?: React.CSSProperties;
+  inProgressStyles?: React.CSSProperties;
   //css classnames Inputs
-  containerClassNames?: ComponentProps<"div">["className"];
-  progressBarClassNames?: ComponentProps<"div">["className"];
-  overlayClassNames?: ComponentProps<"div">["className"];
-  onCompleteClassNames?: ComponentProps<"div">["className"];
-  inProgressClassNames?: ComponentProps<"div">["className"];
+  containerClassNames?: React.ComponentProps<"div">["className"];
+  progressBarClassNames?: React.ComponentProps<"div">["className"];
+  overlayClassNames?: React.ComponentProps<"div">["className"];
+  onCompleteClassNames?: React.ComponentProps<"div">["className"];
+  inProgressClassNames?: React.ComponentProps<"div">["className"];
 }
 
 export default function AlphaCountDown({
@@ -91,13 +84,13 @@ export default function AlphaCountDown({
   customTextBeforeTime,
 }: IAlphaCountDown) {
   const [hydrated, setHydrated] = React.useState(false);
-  const [inputTime, setInputTime] = useState(endTime);
-  const [completed, setCompleted] = useState<boolean>(false);
-  const [startTime, setStartTime] = useState<Date>(new Date());
-  const [timeRemaining, setTimeRemaining] = useState<number>(
+  const [inputTime, setInputTime] = React.useState(endTime);
+  const [completed, setCompleted] = React.useState<boolean>(false);
+  const [startTime, setStartTime] = React.useState<Date>(new Date());
+  const [timeRemaining, setTimeRemaining] = React.useState<number>(
     calculateTimeRemaining()
   );
-  const [percentageRemaining, setPercentageRemaining] = useState<number>(
+  const [percentageRemaining, setPercentageRemaining] = React.useState<number>(
     calculatePercentageRemaining(reverse)
   );
   function calculateTimeRemaining(): number {
@@ -105,12 +98,12 @@ export default function AlphaCountDown({
     const difference = inputTime.getTime() - now.getTime();
     return Math.max(0, difference); // Ensure time remaining is non-negative
   }
-  useEffect(() => {
+  React.useEffect(() => {
     getRemainingDuration && getRemainingDuration(timeRemaining);
     getProgress && getProgress(percentageRemaining);
   }, [timeRemaining, percentageRemaining]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setHydrated(true);
   }, []);
 
@@ -130,7 +123,7 @@ export default function AlphaCountDown({
     return percentage;
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (smoothProgress) {
       let animationFrameId: number;
 
